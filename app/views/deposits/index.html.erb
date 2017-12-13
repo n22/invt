@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deposits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jenis transaksi</th>
+      <th>Nama penyetor</th>
+      <th>Id penyetor</th>
+      <th>Alamat penyetor</th>
+      <th>No telp penyetor</th>
+      <th>Nama penerima</th>
+      <th>Rekening penerima</th>
+      <th>Jenis rekening penerima</th>
+      <th>Jenis valuta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deposits.each do |deposit| %>
+      <tr>
+        <td><%= deposit.jenis_transaksi %></td>
+        <td><%= deposit.nama_penyetor %></td>
+        <td><%= deposit.id_penyetor %></td>
+        <td><%= deposit.alamat_penyetor %></td>
+        <td><%= deposit.no_telp_penyetor %></td>
+        <td><%= deposit.nama_penerima %></td>
+        <td><%= deposit.rekening_penerima %></td>
+        <td><%= deposit.jenis_rekening_penerima %></td>
+        <td><%= deposit.jenis_valuta %></td>
+        <td><%= link_to 'Show', deposit %></td>
+        <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td>
+        <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deposit', new_deposit_path %>

@@ -1,0 +1,62 @@
+<%= form_with(model: deposit, local: true) do |form| %>
+  <% if deposit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(deposit.errors.count, "error") %> prohibited this deposit from being saved:</h2>
+
+      <ul>
+      <% deposit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :jenis_transaksi %>
+    <%= form.text_field :jenis_transaksi, id: :deposit_jenis_transaksi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nama_penyetor %>
+    <%= form.text_field :nama_penyetor, id: :deposit_nama_penyetor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_penyetor %>
+    <%= form.text_field :id_penyetor, id: :deposit_id_penyetor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alamat_penyetor %>
+    <%= form.text_field :alamat_penyetor, id: :deposit_alamat_penyetor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_telp_penyetor %>
+    <%= form.text_field :no_telp_penyetor, id: :deposit_no_telp_penyetor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nama_penerima %>
+    <%= form.text_field :nama_penerima, id: :deposit_nama_penerima %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rekening_penerima %>
+    <%= form.text_field :rekening_penerima, id: :deposit_rekening_penerima %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jenis_rekening_penerima %>
+    <%= form.text_field :jenis_rekening_penerima, id: :deposit_jenis_rekening_penerima %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jenis_valuta %>
+    <%= form.text_field :jenis_valuta, id: :deposit_jenis_valuta %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
